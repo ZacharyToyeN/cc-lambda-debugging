@@ -21,7 +21,7 @@ def lambda_handler(event, context=None):
             'statusCode': 400,
             'body': json.dumps('Error: temperature field is required')
         }
-    fahrenheit = celsius * (9/5) + 32
+    fahrenheit = round(celsius * (9/5) + 32, 2)
     
     return {
         'statusCode': 200,
