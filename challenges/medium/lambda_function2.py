@@ -34,7 +34,7 @@ def lambda_handler(event, context=None):
     d = {"a": "Alpha", "e": "Echo", "i": "India", "o": "Oscar", "u": "Uniform", "y": "Yankee"}
     for char in word:
         if(char.tolower() in d): res.append(d[char])
-        else res.append(char)
+        else: res.append(char)
 
     return {
         'statusCode': 200,
