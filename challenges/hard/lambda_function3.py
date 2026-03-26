@@ -34,13 +34,13 @@ def lambda_handler(event, context=None):
     for char in expr:
         if char in ["+", "-", "/", "*"]:
             if char == "+":
-                a = res[0] + res[1]
+                a = res[-1] + res[-2]
             if char == "-":
-                a = res[0] - res[1]
+                a = res[-1] - res[-2]
             if char == "/":
-                a = res[0] / res[1]
+                a = res[-1] / res[-2]
             if char == "*":
-                a = res[0] * res[1]
+                a = res[-1] * res[-2]
             res = res[2:] + [a]
         else:
             res.append(char)
