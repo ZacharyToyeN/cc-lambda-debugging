@@ -14,6 +14,7 @@ Expected output: {"statusCode": 200, "value": 2}
 
 Expected input: {"expression": "5 10 * 5 10 / +"}
 Expected output: {"statusCode": 200, "value": 50.5}
+2 3 4 * *
 """
 import json
 
@@ -34,13 +35,13 @@ def lambda_handler(event, context=None):
     for char in expr:
         if char in ["+", "-", "/", "*"]:
             if char == "+":
-                a = res[-1] + res[-2]
+                a = res[-2] + res[-1]
             if char == "-":
-                a = res[-1] - res[-2]
+                a = res[-2] - res[-1]
             if char == "/":
-                a = res[-1] / res[-2]
+                a = res[-2] / res[-1]
             if char == "*":
-                a = res[-1] * res[-2]
+                a = res[-2] * res[-1]
             res = res[:-2]
             res.append(a)
         else:
