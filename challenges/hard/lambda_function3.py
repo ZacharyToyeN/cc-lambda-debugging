@@ -41,7 +41,8 @@ def lambda_handler(event, context=None):
                 a = res[-1] / res[-2]
             if char == "*":
                 a = res[-1] * res[-2]
-            res = res[2:] + [a]
+            res = res[:-2]
+            res.append(a)
         else:
             res.append(int(char))
 
