@@ -43,7 +43,7 @@ def lambda_handler(event, context=None):
                 a = res[-1] * res[-2]
             res = res[2:] + [a]
         else:
-            res.append(char)
+            res.append(int(char))
 
     return {
         'statusCode': 200,
